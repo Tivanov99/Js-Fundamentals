@@ -1,0 +1,27 @@
+function solve(input) {
+    let Hoods = input[0].split(', ');
+    let array = {};
+    let MyMap=new Map();
+    for (let index = 0; index < Hoods.length; index++) {
+        MyMap.set(Hoods[index],[]);
+    }
+    let Peoples = input.slice(1, input.length);
+    for (let element of input) {
+        let [street, people] = element.split(' - ');
+        if (MyMap.has(street)) {
+            let ListOFPeoples=MyMap.get(street);
+            ListOFPeoples.push(people);
+            MyMap.set(street,ListOFPeoples);
+        }
+    }
+    let entries = Array.from(MyMap).sort((a, b) => {
+        return b[1].length - a[1].length;
+    });
+    for (let [hood, people] of entries) {
+        console.log(`${hood}: ${people.length}`)
+        for (let index = 0; index < people.length; index++) {
+            console.log(`--${people[index]}`);
+
+        }
+    }
+}
