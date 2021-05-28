@@ -1,0 +1,11 @@
+function AddAndSubtract(arr1, arr2) {
+    let elements = [];
+    let start = 0;
+    for (let index = 0; index < arr1.length; index++) {
+        let result = arr2.includes(arr1[index]);
+        if (result==true) {
+            elements[start++] = arr1[index];
+        }
+    }
+    console.log(elements.join('\n'));
+}
