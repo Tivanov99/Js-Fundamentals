@@ -1,0 +1,15 @@
+function CarWash(comands) {
+    let percentage = 0;
+    for (let index = 0; index < comands.length; index++) {
+        if (comands[index] == 'soap') {
+            percentage += 10;
+        } else if (comands[index] == 'water') {
+            percentage += percentage * 0.2;
+        } else if (comands[index] == 'vacuum cleaner') {
+            percentage += percentage * 0.25;
+        } else if (comands[index] == 'mud') {
+            percentage -= percentage * 0.1;
+        }
+    }
+    console.log(`The car is ${percentage.toFixed(2)}% clean.`)
+}
