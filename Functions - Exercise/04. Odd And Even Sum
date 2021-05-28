@@ -1,0 +1,29 @@
+function Solve(input) {
+    let NumAsString = input.toString();
+
+    function Print(OddResult, EvenResult) {
+        console.log(`${OddResult}, ${EvenResult}`)
+    }
+
+    function EvenSum(number) {
+        let Even = 0;
+        for (let index = 0; index < number.length; index++) {
+            let currNum = parseInt(number[index]);
+            if (currNum % 2 == 0) {
+                Even += currNum;
+            }
+        }
+        return `Even sum = ${Even}`;
+    }
+    function OddSum(number) {
+        let Odd = 0;
+        for (let index = 0; index < number.length; index++) {
+            let currNum = parseInt(number[index]);
+            if (currNum % 2 != 0) {
+                Odd += currNum;
+            }
+        }
+       return `Odd sum = ${Odd}`;
+    }
+    Print(OddSum(NumAsString),EvenSum(NumAsString));
+}
