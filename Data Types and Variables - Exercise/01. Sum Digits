@@ -1,0 +1,9 @@
+function SpecialNumbers(number) {
+    let CurrNumber = number.toString();
+        let Currsum = 0;
+        for (let index = 0; index < CurrNumber.length; index++) {
+            Currsum += parseInt(CurrNumber[index]);
+        }
+    
+    console.log(Currsum);
+}
