@@ -22,7 +22,7 @@ function solve(input) {
         } else if (CurrCommand[0] == 'Upgrade') {
             let PassedElement=CurrCommand[1].split('-');
             if (Items.includes(PassedElement[0])) {
-                let EquipmentIndex = Items.indexOf(CurrCommand[1]);
+                let EquipmentIndex = Items.indexOf(PassedElement[0]);
                 Items.splice(EquipmentIndex + 1, 0, `${PassedElement[0]}:${PassedElement[1]}`);
             }
         }
