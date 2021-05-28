@@ -1,0 +1,9 @@
+function Summing(number) {
+    for (let i = 1; i <= number; i++) {
+        let nums = [];
+        for (let j = 0; j < i; j++) {
+            nums[j]=i;
+        }
+        console.log(nums.join(" "));
+    }
+}
