@@ -1,0 +1,19 @@
+function Solve(input) {
+    let InputAsString = input.toString().split(',');
+    for (let index = 0; index < InputAsString.length; index++) {
+        let CurrentPiece = Reverse(InputAsString[index]);
+        if (CurrentPiece == InputAsString[index]) {
+            console.log('true');
+        } else {
+            console.log('false');
+        }
+
+    }
+    function Reverse(CurrPiece) {
+        let Reversed = '';
+        for (let index = CurrPiece.length - 1; index >= 0; index--) {
+            Reversed += CurrPiece[index];
+        }
+        return Reversed;
+    }
+}
