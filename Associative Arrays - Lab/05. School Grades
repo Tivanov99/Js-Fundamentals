@@ -1,0 +1,22 @@
+function solve(input) {
+    let array = {};
+    for (let element of input) {
+        let splited = element.split(' ');
+        let grades = splited.slice(1, splited.length).map(Number);
+
+        if (array.hasOwnProperty(splited[0])) {
+            let currGrades = array[splited[0]];
+            array[splited[0]] = (currGrades.concat(grades));
+        } else {
+            array[splited[0]] = grades;
+        }
+    }
+    let entries = Object.entries(array).sort((a, b) => {
+        let GradesA = a[1].reduce((p, c) => p + c, 0) / a[1].length;
+        let GradesB = b[1].reduce((p, c) => p + c, 0) / b[1].length;
+        return GradesA - GradesB;
+    });
+    for (let [name, grade] of entries) {
+        console.log(`${name}: ${grade.join(', ')}`);
+    }
+}
