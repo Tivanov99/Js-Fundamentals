@@ -1,0 +1,11 @@
+function Solve(input) {
+    let Objects = [];
+    for (let index = 0; index < input.length; index++) {
+        let CurrentTown = input[index].split(' | ');
+        let Town = { town: CurrentTown[0], latitude: parseFloat(CurrentTown[1]).toFixed(2), longitude: parseFloat(CurrentTown[2]).toFixed(2) };
+        Objects.push(Town);
+    }
+    for (let element of Object.values(Objects)) {
+        console.log(element)
+    }
+}
