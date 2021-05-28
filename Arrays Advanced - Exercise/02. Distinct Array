@@ -1,0 +1,15 @@
+function Solve(input) {
+    let Repeated = [];
+    for (let i = 0; i < input.length; i++) {
+        for (let index = 0; index < input.length; index++) {
+            if (input[index] == input[i] && index != i) {
+                Repeated.push(index);
+            }
+        }
+        if(Repeated.length>0)
+        {
+            input.splice(Repeated.pop(), 1);
+        }
+    }
+    console.log(input.join(' '));
+}
