@@ -1,0 +1,6 @@
+function Solve(input) {
+
+    for (let element of Object.entries(input)) {
+        console.log(`${element[0]} -> ${element[1]}`);
+    }
+}
