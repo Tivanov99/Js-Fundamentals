@@ -1,0 +1,17 @@
+function MagicSum(array, magicNumber) {
+    let Result = [];
+    let indexOfResult = 0;
+    for (let index = 0; index < array.length; index++) {
+        let CurrNumber = array[index];
+        for (let i = index + 1; i < array.length; i++) {
+            let SecondNumber = array[i];
+            if (CurrNumber != -1 && SecondNumber != -1 && CurrNumber + SecondNumber == magicNumber) {
+                Result[indexOfResult++] = `${CurrNumber} ${SecondNumber}`;
+                array[index] = -1;
+                array[i] = -1;
+                break;
+            }
+        }
+    }
+    console.log(`${Result.join('\n')}`);
+}
