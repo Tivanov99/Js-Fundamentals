@@ -1,0 +1,8 @@
+function concatenate(word, missgingChar, stringForCompare) {
+    let result = word.replace('_', missgingChar);
+    if (result == stringForCompare) {
+        console.log('Matched');
+    }else{
+        console.log('Not Matched');
+    }
+}
