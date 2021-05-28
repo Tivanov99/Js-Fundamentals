@@ -1,0 +1,13 @@
+function printer (count){
+    let sum=0;
+    let start=1;
+    while(count>0)
+    {
+        console.log(start);
+        sum+=start;
+        start+=2;
+        count--;
+    }
+   
+    console.log(`Sum: ${sum}`)
+}
