@@ -1,0 +1,19 @@
+function Grade(grade) {
+    let result = '';
+    switch (true) {
+        case grade < 3: result = `Fail (${grade})`;
+            break;
+        case grade < 3.50: result = `Poor (${grade.toFixed(2)})`;
+            break;
+        case grade < 4.50: result = `Good (${grade.toFixed(2)})`;
+            break;
+        case grade < 5.50: result = `Very good (${grade.toFixed(2)})`;
+            break;
+        case grade >= 5.50: result = `Excellent (${grade.toFixed(2)})`;
+            break;
+    }
+    Print(result);
+    function Print(outPut) {
+        console.log(outPut);
+    }
+}
