@@ -1,0 +1,19 @@
+function solve(sequence, Special) {
+    let BombNumber = Special[0];
+    let BombPower = Special[1];
+    let IndexOFBomb = 0
+    while (IndexOFBomb != -1) {
+        IndexOFBomb = sequence.indexOf(BombNumber);
+        if (IndexOFBomb != -1) {
+            sequence.splice(IndexOFBomb - BombPower, BombPower * 2 + 1);
+        }
+    }
+    function Sum(nums) {
+        let Result = 0;
+        for (let index = 0; index < nums.length; index++) {
+            Result += nums[index];
+        }
+        return Result;
+    }
+    console.log(Sum(sequence));
+}
