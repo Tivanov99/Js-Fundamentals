@@ -1,0 +1,12 @@
+function SumEvenNumbers(arr) {
+    let EvenSum = 0;
+    let OddSum=0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
+            EvenSum += parseInt(arr[i]);
+        }else{
+            OddSum+=parseInt(arr[i]);
+        }
+    }
+    console.log(EvenSum-OddSum);
+}
