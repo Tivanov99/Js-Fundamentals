@@ -1,0 +1,4 @@
+function printer(distance){
+    let result = distance/1000;
+    console.log(result.toFixed(2));
+}
