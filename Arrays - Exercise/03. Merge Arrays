@@ -1,0 +1,11 @@
+function MergeArrays(arr1, arr2) {
+    let third = [];
+    for (let index = 0; index < arr1.length; index++) {
+        if (index % 2 == 0) {
+            third[index] = parseInt(arr1[index]) + parseInt(arr2[index]);
+        } else {
+            third[index] = (arr1[index] + arr2[index]);
+        }
+    }
+    console.log(third.join(' - '));
+}
