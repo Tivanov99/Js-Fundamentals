@@ -1,0 +1,6 @@
+function Solve(input) {
+    let result = JSON.parse(input)
+    for (let element of Object.entries(result)) {
+        console.log(`${element[0]}: ${element[1]}`);
+    }
+}
