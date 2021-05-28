@@ -1,0 +1,16 @@
+function solve(input) {
+    let collection = {};
+    //iterate through input
+    for (let element of input) {
+        let [DayOfWeek, PersonName] = element.split(' ');
+        if (collection.hasOwnProperty(DayOfWeek)) {
+            console.log(`Conflict on ${DayOfWeek}!`)
+        } else {
+            collection[DayOfWeek] = PersonName;
+            console.log(`Scheduled for ${DayOfWeek}`);
+        }
+    }
+    for (let [keys, value] of Object.entries(collection)) {
+        console.log(`${keys} -> ${value}`);
+    }
+}
