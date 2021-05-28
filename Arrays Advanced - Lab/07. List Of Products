@@ -1,0 +1,7 @@
+function Solve(Products) {
+    let sorted = Products.sort();
+    let start = 1;
+    for (let index = 0; index < Products.length; index++) {
+        console.log(`${index+1}.${Products[index]}`);
+    }
+}
