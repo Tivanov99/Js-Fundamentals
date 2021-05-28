@@ -1,0 +1,12 @@
+function LittleNum(a, b, c) {
+    if (a < b && a < c) {
+        Print(a);
+    } else if (b < a && b < c) {
+        Print(b);
+    } else if (c < a && c < b) {
+        Print(c);
+    }
+    function Print(num) {
+        console.log(num);
+    }
+}
