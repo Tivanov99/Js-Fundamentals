@@ -1,0 +1,7 @@
+function Sum(a, b, c) {
+    let result = a + b;
+    function Subtract(sum, subtracter) {
+        console.log(sum - subtracter);
+    }
+    Subtract(result, c);
+}
