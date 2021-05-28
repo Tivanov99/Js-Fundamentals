@@ -1,0 +1,31 @@
+function solve(input) {
+    let Items = input[0].split(' ');
+    for (let index = 1; index < input.length; index++) {
+        let CurrCommand = input[index].split(' ');
+        if (CurrCommand[0] == 'Buy') {
+            if (!Items.includes(CurrCommand[1])) {
+                Items.push(CurrCommand[1]);
+            }
+        } else if (CurrCommand[0] == 'Trash') {
+            if (Items.includes(CurrCommand[1])) {
+                let DeletedIndex = Items.indexOf(CurrCommand[1]);
+                Items.splice(DeletedIndex, 1);
+            }
+        }
+        else if (CurrCommand[0] == 'Repair') {
+            if (Items.includes(CurrCommand[1])) {
+                let DeletedIndex = Items.indexOf(CurrCommand[1]);
+                let CurrElement=Items[DeletedIndex];
+                let CurrEquipment = Items.splice(DeletedIndex, 1);
+                Items.push(CurrElement);
+            }
+        } else if (CurrCommand[0] == 'Upgrade') {
+            let PassedElement=CurrCommand[1].split('-');
+            if (Items.includes(PassedElement[0])) {
+                let EquipmentIndex = Items.indexOf(CurrCommand[1]);
+                Items.splice(EquipmentIndex + 1, 0, `${PassedElement[0]}:${PassedElement[1]}`);
+            }
+        }
+    }
+    console.log(Items.join(' '));
+}
