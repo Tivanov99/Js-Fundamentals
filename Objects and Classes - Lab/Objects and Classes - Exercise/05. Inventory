@@ -1,0 +1,27 @@
+function Solve(input) {
+    class Hero {
+        constructor(Hero, level, items) {
+            this.Hero = Hero;
+            this.level = level;
+            this.items = this.Additem(items);
+        }
+        Additem(items) {
+            let splited = items.split(', ');
+            let ArrayOfItems = [];
+            for (let index = 0; index < splited.length; index++) {
+                ArrayOfItems.push(splited[index]);
+            }
+           return this.items = ArrayOfItems.sort();
+        };
+    };
+    let Heroes = [];
+    for (let index = 0; index < input.length; index++) {
+        let HeroInfo = input[index].split(' / ');
+        let currHero = new Hero(HeroInfo[0], HeroInfo[1], HeroInfo[2])
+        Heroes.push(currHero);
+    }
+    let sorted = Heroes.sort((a, b) => a.level - b.level);
+    for (let element of sorted) {
+        console.log(`Hero: ${element.Hero}\nlevel => ${element.level}\nitems => ${element.items.join(', ')}`)
+    }
+}
