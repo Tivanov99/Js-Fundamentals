@@ -1,0 +1,7 @@
+function MathPower(number, power) {
+    let result=number*number;
+    for (let index = 1; index < power-1; index++) {
+        result *=number;
+    }
+    console.log(result);
+}
