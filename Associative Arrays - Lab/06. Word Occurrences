@@ -1,0 +1,17 @@
+function solve(input) {
+    let Array = {};
+    for (let element of input) {
+        if (Array.hasOwnProperty(element)) {
+            let CurrentCountOfWord = Array[element];
+            Array[element] = CurrentCountOfWord + 1;
+        } else {
+            Array[element] = 1;
+        }
+    }
+    let entries = Object.entries(Array).sort((a, b) => {
+        return b[1] - a[1];
+    });
+    for (let [word, count] of entries) {
+        console.log(`${word} -> ${count} times`);
+    }
+}
