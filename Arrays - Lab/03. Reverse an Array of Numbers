@@ -1,0 +1,10 @@
+function reverse(count, arr) {
+    arr.lenght = count;
+    let reversed = [count];
+    let start = 0;
+    for (let index = arr.lenght - 1; index >= 0; index--) {
+        reversed[start++] = arr[index];
+    }
+    let result = reversed.toString().split(',').join(' ');
+    console.log(result);
+}
