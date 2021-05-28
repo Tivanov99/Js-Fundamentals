@@ -1,0 +1,6 @@
+function Solve(input) {
+    let Range = input[0];
+    let First = input.slice(1, Range + 1);
+    let Second = input.slice(input.length - Range, input.length);
+    console.log(`${First.join(' ')}\n${Second.join(' ')}`);
+}
