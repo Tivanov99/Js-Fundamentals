@@ -1,0 +1,13 @@
+function arena(LostFightCount, HelmetPrice, SwordPrice, ShieldPrice, ArmorPrice) {
+    let BrokenHelmetTimes = parseInt(LostFightCount / 2);
+    let BrokenSwordTimes = parseInt(LostFightCount / 3);
+    let ShieldBrokenTimes = parseInt(LostFightCount / 6);
+    let ArmourBrokenTimes = parseInt(ShieldBrokenTimes / 2);
+
+    let BrokenHelmetPrice = parseInt(BrokenHelmetTimes * HelmetPrice);
+    let BokenSwordPrice = parseInt(BrokenSwordTimes * SwordPrice);
+    let BrokenShieldPRice = parseInt(ShieldBrokenTimes * ShieldPrice);
+    let BrokenArmourPrice = parseInt(ArmourBrokenTimes * ArmorPrice);
+    let total = BrokenHelmetPrice + BokenSwordPrice + BrokenShieldPRice + BrokenArmourPrice;
+    console.log(`Gladiator expenses: ${total.toFixed(2)} aureus`);
+}
