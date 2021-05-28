@@ -1,0 +1,24 @@
+function solve(input) {
+    let SearchWords = input[0].split(' ');
+    let AsociArr = {};
+    for (let index = 0; index < SearchWords.length; index++) {
+        if (AsociArr.hasOwnProperty(SearchWords[index])) {
+            let CurrentCount = AsociArr[input[index]];
+            AsociArr[input[index]] = CurrentCount++;
+        } else {
+            AsociArr[SearchWords[index]] = 0;
+        }
+    }
+    for (let index = 1; index < input.length; index++) {
+        if (SearchWords.includes(input[index])) {
+            let CurrentCount = AsociArr[input[index]];
+            AsociArr[input[index]] = CurrentCount + 1;
+        }
+    }
+    let entries = Object.entries(AsociArr).sort((a, b) => {
+        return b[1] - a[1];
+    });
+    for (let [word, count] of entries) {
+        console.log(`${word} - ${count}`);
+    }
+}
