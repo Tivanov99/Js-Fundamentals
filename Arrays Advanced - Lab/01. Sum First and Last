@@ -1,0 +1,9 @@
+function Sum(array) {
+    if (array.length == 1) {
+        console.log(array[0]);
+    } else {
+        let FirstNum = array.shift();
+        let LastNum = array.pop();
+        console.log(parseInt(FirstNum) + parseInt(LastNum));
+    }
+}
