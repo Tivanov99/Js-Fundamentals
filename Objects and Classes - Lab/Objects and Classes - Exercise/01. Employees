@@ -1,0 +1,11 @@
+function Solve(input) {
+    let Objects = [];
+    for (let index = 0; index < input.length; index++) {
+        let currentInfo = input[index];
+        let Person = { Name: currentInfo, PErsonalNumber: currentInfo.length };
+        Objects.push(Person);
+    }
+    for (let Element of Objects) {
+        console.log(`Name: ${Element.Name} -- Personal Number: ${Element.PErsonalNumber}`)
+    }
+}
