@@ -1,0 +1,20 @@
+function Solve(LocalStoreStock, OrderedProducts) {
+    let LocalStock = [];
+    for (let index = 0; index < LocalStoreStock.length; index += 2) {
+        let CurrentProduct = { name: LocalStoreStock[index], quantity: parseInt(LocalStoreStock[index + 1]) };
+        LocalStock.push(CurrentProduct);
+    }
+    for (let index = 0; index < OrderedProducts.length; index += 2) {
+        let CurrentProduct = { name: OrderedProducts[index], quantity: parseInt(OrderedProducts[index + 1]) };
+        let Check = LocalStock.filter(x => x.name == CurrentProduct.name);
+        if (Check != 0) {
+            let da = LocalStock.findIndex(x => x.name == CurrentProduct.name);
+            LocalStock[da].quantity += CurrentProduct.quantity;
+        } else {
+            LocalStock.push(CurrentProduct);
+        }
+    }
+    for (let element of LocalStock) {
+        console.log(`${element.name} -> ${element.quantity}`);
+    }
+}
