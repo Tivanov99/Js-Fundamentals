@@ -1,0 +1,18 @@
+function Summing(names) {
+    let count = 1;
+    let IsFound = false;
+    while (count < 4 && IsFound != true) {
+        let reversed = names[count].split("").reverse().join("");
+        if (reversed == names[0]) {
+            console.log(`User ${names[0]} logged in.`);
+            IsFound = true;
+            break;
+        } else {
+            console.log('Incorrect password. Try again.');
+        }
+        count++;
+    }
+    if (!IsFound) {
+        console.log(`User ${names[0]} blocked!`);
+    }
+}
