@@ -1,0 +1,18 @@
+function calculate(number1, number2,number3) {
+
+    let numbers= [number1,number2,number3];
+    for (let index = 1; index <= numbers.length - 1; index++) {
+        for (let j = 0; j <= index; j++) {
+            let temp=numbers[j];
+            if(temp>numbers[j+1]){
+                numbers[j]=numbers[j+1];
+                numbers[j+1]=temp;
+            }
+        }
+    }
+    let output= "" ;
+    for (let index = numbers.length-1; index >=0; index--) {
+        output+=String(numbers[index]+ "\n");
+    }
+    console.log(output)
+}
