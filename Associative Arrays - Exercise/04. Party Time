@@ -1,0 +1,49 @@
+function solve(input) {
+    let AsociArray = {};
+    AsociArray['VIP'] = [];
+    AsociArray['Regular'] = [];
+    for (let index = 0; index < input.length; index++) {
+        let element = input[index];
+        if (element == 'PARTY') {
+            let entries = Object.entries(AsociArray).sort((a, b) => {
+                return a[0] - b[0];
+            });
+            let CommingGuest = input.slice(index, input.length);
+            for (let i = index + 1; i < input.length; i++) {
+                let VIPGuests = AsociArray['VIP'];
+                let indexOfGuest = VIPGuests.indexOf(input[i]);
+                if (indexOfGuest > -1) {
+                    VIPGuests.splice(indexOfGuest, 1);
+                    AsociArray['VIP'] = VIPGuests;
+                } else {
+                    let RegularGuests = AsociArray['Regular'];
+                    indexOfGuest = RegularGuests.indexOf(input[i]);
+                    if (indexOfGuest > -1) {
+                        RegularGuests.splice(indexOfGuest, 1);
+                        AsociArray['Regular'] = RegularGuests;
+                    }
+                }
+            }
+            let VipGuests = AsociArray['VIP'];
+            let Reguarguests = AsociArray['Regular'];
+            let TotalCountOfGuestWithDidntCome = VipGuests.length + Reguarguests.length;
+            console.log(TotalCountOfGuestWithDidntCome);
+            if (VipGuests.length > 0) {
+                console.log(VipGuests.join('\n'));
+            } if (Reguarguests.length > 0) {
+                console.log(Reguarguests.join('\n'));
+            }
+        }
+        let result = parseInt(element[0]);
+        if (!isNaN(result)) {
+            let CollectionOfGuests = AsociArray['VIP'];
+            CollectionOfGuests.push(element);
+            AsociArray['VIP'] = CollectionOfGuests;
+        } else {
+            let CollectionOfGuests = AsociArray['Regular'];
+            CollectionOfGuests.push(element);
+            AsociArray['Regular'] = CollectionOfGuests;
+        }
+
+    }
+}
