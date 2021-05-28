@@ -1,0 +1,22 @@
+function solve(first, second) {
+    let FirstCode = first.charCodeAt(0);
+    let SecondCode = second.charCodeAt(0);
+
+    function CharParser(FCode, SCode) {
+        let array = [];
+        let position = 0;
+        if (FCode > SCode) {
+            for (let index = SCode + 1; index < FCode; index++) {
+                let currChar = String.fromCharCode(index);
+                array[position++] = currChar;
+            }
+        } else {
+            for (let index = FCode + 1; index < SCode; index++) {
+                let currChar = String.fromCharCode(index);
+                array[position++] = currChar;
+            }
+        }
+        return array;
+    }
+    console.log(CharParser(FirstCode, SecondCode).join(' '))
+}
