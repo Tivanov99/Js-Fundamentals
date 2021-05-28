@@ -1,0 +1,21 @@
+function solve(input) {
+    let MyMap = new Map();
+    let splited = input.split(' ');
+    for (let index = 0; index < splited.length; index++) {
+        let CurrentWord = splited[index].toLowerCase();
+        if (MyMap.has(CurrentWord)) {
+            let CurrentCount = MyMap.get(CurrentWord);
+            MyMap.set(CurrentWord, CurrentCount + 1);
+        } else {
+            MyMap.set(CurrentWord, 1);
+        }
+    }
+    let entries = Array.from(MyMap);
+    let result=[];
+    for (let [word, count] of entries) {
+        if (count % 2 != 0) {
+            result.push(word);
+        }
+    }
+    console.log(result.join(' '));
+}
