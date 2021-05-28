@@ -1,0 +1,11 @@
+function solve(input) {
+    let PhoneBook = {};
+    //iterate through input
+    for (let element of input) {
+        let [name,number] = element.split(' ');
+        PhoneBook[name] = number;
+    }
+    for (let [name, number] of Object.entries(PhoneBook)) {
+        console.log(`${name} -> ${number}`);
+    }
+}
