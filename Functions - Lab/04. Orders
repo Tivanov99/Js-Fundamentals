@@ -1,0 +1,14 @@
+function Shop(Product, Count) {
+    let Price = 0;
+    switch (Product) {
+        case 'coffee': Price = Count * 1.50;
+            break;
+        case 'water': Price = Count * 1;
+            break;
+        case 'coke': Price = Count * 1.40;
+            break;
+        case 'snacks': Price = Count * 2;
+            break;
+    }
+    return Price.toFixed(2);
+}
