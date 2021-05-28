@@ -1,0 +1,12 @@
+function Summing(start, end) {
+    Number, Sum = 0;
+    let numbers =[];
+    let index=0;
+    for (let i = start; i <=end; i++) {
+        Sum+=i;
+        numbers[index]=i;
+        index++;
+    }
+    console.log(numbers.join(" "));
+    console.log(`Sum: ${Sum}`);
+}
