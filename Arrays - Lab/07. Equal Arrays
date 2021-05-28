@@ -1,0 +1,16 @@
+function SumEvenNumbers(FirstArr, SecondArr) {
+    let FirstSum = 0;
+    let isIdentical = true;
+    for (let i = 0; i < FirstArr.length; i++) {
+        if (FirstArr[i] == SecondArr[i]) {
+            FirstSum += parseInt(FirstArr[i]);
+        } else {
+            isIdentical = false;
+            console.log(`Arrays are not identical. Found difference at ${i} index.`);
+            break;
+        }
+    }
+    if (isIdentical) {
+        console.log(`Arrays are identical. Sum: ${FirstSum}`);
+    }
+}
