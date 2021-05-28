@@ -1,0 +1,20 @@
+function Solve(number) {
+    function Sum(num) {
+        let TotalSum = 0;
+        for (let index = 1; index < num; index++) {
+            let CurrDivider = num / index;
+            if (Number.isInteger(CurrDivider)) {
+                TotalSum += index;
+            }
+        }
+        return TotalSum;
+    }
+    function Printer() {
+        if (number == Sum(number)) {
+            console.log('We have a perfect number!')
+        } else {
+            console.log(`It's not so perfect.`);
+        }
+    }
+    Printer();
+}
