@@ -1,0 +1,66 @@
+function Solve(input) {
+    let Movies = [];
+    class Movie {
+        constructor(name, director, date) {
+            this.name = name;
+            this.director = director;
+            this.date = date;
+        }
+    }
+    for (let index = 0; index < input.length; index++) {
+        let CurrCommand = input[index].split(' ');
+        if (CurrCommand[0] == "addMovie") {
+            let MovieName = input[index].slice(9, input[index].length);
+            let IndexOfMovie = Movies.findIndex(x => x.name == CurrCommand[1]);
+            if (IndexOfMovie == -1) {
+                Movies.push(new Movie(MovieName));
+            }
+        } else {
+            for (let k = 0; k < CurrCommand.length; k++) {
+                if (CurrCommand[k] == "directedBy") {
+                    let MovieName = CurrCommand[0];
+                    let i = 1;
+                    while (true) {
+                        if (CurrCommand[i] == "directedBy") {
+                            break;
+                        } else {
+                            MovieName += ` ${CurrCommand[i++]}`;
+                        }
+                    }
+                    let IndexOfMovie = Movies.findIndex(x => x.name == MovieName);
+                    if (IndexOfMovie != -1) {
+                        let DirectorName = CurrCommand[++i];
+                        for (let j = i + 1; j < CurrCommand.length; j++) {
+                            DirectorName += ` ${CurrCommand[j]}`;
+                        }
+                        Movies[IndexOfMovie].director = DirectorName;
+                    }
+                    break;
+                } else if (CurrCommand[k] == "onDate") {
+                    let MovieName = CurrCommand[0];
+                    let i = 1;
+                    while (true) {
+                        if (CurrCommand[i] == "onDate") {
+                            i++;
+                            break;
+                        } else {
+                            MovieName += ` ${CurrCommand[i++]}`;
+                        }
+                    }
+                    let IndexOfMovie = Movies.findIndex(x => x.name == MovieName);
+                    if (IndexOfMovie != -1) {
+                        let Date = CurrCommand[i];
+                        Movies[IndexOfMovie].date = Date;
+                    }
+                    break;
+                }
+            }
+        }
+    }
+    for (let element of Movies) {
+        if(element.date!=undefined && element.name!=undefined && element.director!=undefined){
+            let result = JSON.stringify(element);
+            console.log(result);
+        }
+    }
+}
