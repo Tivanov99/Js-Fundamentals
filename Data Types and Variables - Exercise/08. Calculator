@@ -1,0 +1,18 @@
+function calculator(FirstNum, operator, SecondNum) {
+    let result = 0;
+    switch (operator) {
+        case '+':
+            result = FirstNum + SecondNum;
+            break;
+        case '-':
+            result = FirstNum - SecondNum;
+            break;
+        case '*':
+            result = FirstNum * SecondNum;
+            break;
+        case '/':
+            result = FirstNum / SecondNum;
+            break;
+    }
+    console.log(result.toFixed(2));
+}
