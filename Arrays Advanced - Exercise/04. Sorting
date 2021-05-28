@@ -1,0 +1,10 @@
+function Sort(input) {
+    let result = input.sort((a, b) => b - a);
+    for (let index = 0; index < result.length; index++) {
+        if (index == 1 || index % 2 != 0) {
+            let Small = result.splice(result.length-1, 1);
+            result.splice(index,0,Small);
+        }
+    }
+    console.log(result.join(' '));
+}
