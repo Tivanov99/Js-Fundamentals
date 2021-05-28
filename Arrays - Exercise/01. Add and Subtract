@@ -1,0 +1,14 @@
+function AddAndSubtract(arr) {
+    let OriginalSum=0;
+    let NewSum=0;
+    for (let i = 0; i < arr.length; i++) {
+        OriginalSum+=arr[i];
+        if (arr[i] % 2 == 0) {
+            arr[i] += i;
+        } else {
+            arr[i] -= i;
+        }
+        NewSum+=arr[i];
+    }
+    console.log(`[ ${arr.join(', ')} ]\n${OriginalSum}\n${NewSum}`);
+}
