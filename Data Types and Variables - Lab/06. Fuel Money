@@ -1,0 +1,7 @@
+function FuelCalculator(distance, passengers, pricePerLitter) {
+
+    let Litters = (distance/100) * 7;
+    Litters += (passengers) * 0.100;
+    let needMoney= Litters*pricePerLitter;
+    console.log(`Needed money for that trip is ${needMoney}lv.`);
+}
