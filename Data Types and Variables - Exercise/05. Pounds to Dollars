@@ -1,0 +1,4 @@
+function change(pounds){
+    let result = pounds*1.31;
+    console.log(result.toFixed(3));
+}
