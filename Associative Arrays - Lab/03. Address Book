@@ -1,0 +1,19 @@
+function solve(input) {
+    let colleciton = {};
+    for (let element of input) {
+        let [name, address] = element.split(':');
+        colleciton[name] = address;
+    }
+    let entries = Object.entries(colleciton).sort((a, b) => {
+        let A = a[0];
+        let B = b[0];
+        return A.localeCompare(B);
+    });
+
+
+
+    for (let element of Object.entries(entries)) {
+        let [name, address] = element[1];
+        console.log(`${name} -> ${address}`);
+    }
+}
