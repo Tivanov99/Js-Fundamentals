@@ -1,0 +1,15 @@
+function PrimeNumber(number) {
+    let IsPrime = true;
+    for (let i = 2; i <= 10; i++) {
+        if (i != number) {
+            if (Number.isInteger(number / i)) {
+                IsPrime = false;
+                console.log('false');
+                break;
+            }
+        }
+    }
+    if (IsPrime) {
+        console.log('true');
+    }
+}
