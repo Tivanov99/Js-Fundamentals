@@ -1,0 +1,5 @@
+function solve (n){
+  for (let index = n; index >= 1; index--) {
+      console.log(index);
+  }
+}
