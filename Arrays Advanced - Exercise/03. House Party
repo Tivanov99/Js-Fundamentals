@@ -1,0 +1,25 @@
+function HouseParty(Input) {
+    let Guests = [];
+    let WrongMessages=[];
+    for (let index = 0; index < Input.length; index++) {
+        let CurrCommand = Input[index].split(' ');
+        if (CurrCommand.length == 3) {
+            if (Guests.includes(CurrCommand[0])) {
+                WrongMessages.push(`${CurrCommand[0]} is already in the list!`);
+            } else {
+                Guests.push(CurrCommand[0]);
+            }
+        } else {
+            if (Guests.includes(CurrCommand[0])) {
+                let RemovedIndex = Guests.indexOf(CurrCommand[0]);
+                Guests.splice(RemovedIndex, 1);
+            } else {
+                WrongMessages.push(`${CurrCommand[0]} is not in the list!`);
+            }
+        }
+    }
+    if(WrongMessages.length>0){
+        console.log(WrongMessages.join('\n'));
+    }
+    console.log(Guests.join('\n'));
+}
