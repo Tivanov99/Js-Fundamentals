@@ -1,0 +1,16 @@
+function LeapYear(Year) {
+    let four =(Year / 4);
+    let fourThousen = (Year / 400);
+
+    if (Number.isInteger(four) && Year % 100 != 0) {
+        console.log('yes');
+    } else if(Number.isInteger(fourThousen) && Year % 100 != 0){
+        console.log('yes');
+    }
+    else if(Number.isInteger(four) &&Number.isInteger(fourThousen)){
+        console.log('yes');
+    }
+     else {
+        console.log('no');
+    }
+}
