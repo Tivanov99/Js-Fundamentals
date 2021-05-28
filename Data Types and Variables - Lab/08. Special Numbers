@@ -1,0 +1,16 @@
+function SpecialNumbers(number) {
+    let array = [];
+    for (let i = 1; i <= number; i++) {
+        let currNum = i.toString();
+        let Currsum = 0;
+        for (let index = 0; index < currNum.length; index++) {
+            Currsum += parseInt(currNum[index]);
+        }
+        if (Currsum == 5 || Currsum == 7 || Currsum == 11) {
+            array[i] = `${i} -> True`;
+        } else {
+            array[i] = `${i} -> False`;
+        }
+    }
+    console.log(array.join(`\n`));
+}
