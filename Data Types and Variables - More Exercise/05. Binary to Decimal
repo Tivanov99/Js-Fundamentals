@@ -1,0 +1,4 @@
+function Converter(number) {
+    return parseInt((number + '')
+    .replace(/[^01]/gi, ''), 2);
+}
