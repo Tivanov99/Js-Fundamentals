@@ -1,0 +1,19 @@
+function TopNumbers(arr) {
+    let TopNums = [];
+    let start = 0;
+    for (let i = 0; i < arr.length; i++) {
+        let IsTop = true;
+        let CurrElement = arr[i];
+        for (let index = i; index < arr.length; index++) {
+            if (arr[index] > CurrElement) {
+                IsTop = false;
+                break;
+            }
+        }
+        let IsContains= TopNums.includes(CurrElement);
+        if (IsTop && !IsContains) {
+            TopNums[start++] = CurrElement;
+        }
+    }
+    console.log(TopNums.join(' '));
+}
