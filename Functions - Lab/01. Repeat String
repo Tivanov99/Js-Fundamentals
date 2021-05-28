@@ -1,0 +1,7 @@
+function solve(input, count) {
+    let result='';
+    for (let index = 0; index < count; index++) {
+        result+=input;
+    }
+    console.log(result);
+}
