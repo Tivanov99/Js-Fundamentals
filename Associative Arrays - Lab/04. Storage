@@ -1,0 +1,15 @@
+function solve(input) {
+    let map = new Map();
+    for (let element of input) {
+        let [name, quantity] = element.split(' ');
+        if (map.has(name)) {
+            let NewQuantity =    parseInt(map.get(name)) + parseInt(quantity);
+            map.set(name, NewQuantity);
+        } else {
+            map.set(name, quantity);
+        }
+    }
+    for(let [name,quantity] of map){
+        console.log(`${name} -> ${quantity}`)
+    }
+}
