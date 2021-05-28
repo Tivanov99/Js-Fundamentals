@@ -1,0 +1,9 @@
+function Solve(numbers, Specials) {
+    let CountOfTakedElements = Specials[0];
+    let CountOfElementShouldBeDeleted = Specials[1];
+    let SearchedNumber = Specials[2];
+    let result = numbers.slice(0, CountOfTakedElements);
+    result.splice(0, CountOfElementShouldBeDeleted);
+    let Output=result.filter(el=>el==SearchedNumber);
+    console.log(`Number ${SearchedNumber} occurs ${Output.length} times.`)
+}
