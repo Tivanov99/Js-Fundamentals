@@ -1,0 +1,36 @@
+function calculate(gold) {
+    let totalMoney = 0;
+    let countOfBitcoints = 0;
+    let goldPerDay = 0;
+    let firstday=-1;
+    let RESULT = [];
+    for (let i = 1; i <= gold.length; i++) {
+        if (i % 3 == 0) {
+            goldPerDay = gold[i - 1] * 0.70;
+        }
+        else {
+            goldPerDay = gold[i - 1];
+        }
+
+        totalMoney += (goldPerDay * 67.51);
+
+        if (totalMoney >= 11949.16) {
+            if (firstday == -1) {
+                firstday=i;
+            }
+        }
+    }
+    while(totalMoney>11949.16){
+        totalMoney-=11949.16;
+        countOfBitcoints++;
+    }
+    RESULT[0]=`Bought bitcoins: ${countOfBitcoints}`;
+    if(firstday!=-1){
+        RESULT[1]=(`Day of the first purchased bitcoin: ${firstday}`);
+        RESULT[2]=(`Left money: ${totalMoney.toFixed(2)} lv.`);
+    }
+    else{
+        RESULT[1]=(`Left money: ${totalMoney.toFixed(2)} lv.`);
+    }
+console.log(RESULT.join('\n'));
+}
